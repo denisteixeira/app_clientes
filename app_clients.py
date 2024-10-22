@@ -10,7 +10,7 @@ def index ():
     con = sql.connect("db_users")
     con.row_factory=sql.Row
     cur=con.cursor()
-    cur.execute("Select * from clients")
+    cur.execute("Select * from clientes")
     data=cur.fetchall()
     return render_template("index.html", datas=data)
 
