@@ -1,5 +1,5 @@
-form flask import Flask, render_template, request, redirect, url_for, flash
-import 
+from flask import Flask, render_template, request, redirect, url_for, flash
+import mysql.connector as sql
 
 app=Flask(__name__)
 
@@ -42,4 +42,24 @@ def edit_user(id)
         cur=con.cursor()
         cur.execute("update clients set USERNAME=?, EMAIL=?, PASSWORD=?, CREATE_TIME=?, CPF=? where ID=?", (username, email, password, create_time, cpf,id))
         con.commit()
-        
+        flash("Dados atualizados", "success")
+        return redirect(url_for("index"))
+    con=sql.connect("db_users")
+    con.row_factory=sql.Row
+    cur=con.cursor()
+    cur.execute("select * from users where ID =?", (id,))
+    data=cur.fetchone()
+    return render_template("edit_user.html", datas=data)
+
+@app.route("/delete_user/<string:id>", methods=["GET"])
+def delete_user(id):
+    con=sql.connect("db_users")
+    cur=con.cursor()
+    cur.execute("delete from clients where ID=?", (id))
+    con.commit()
+    flash("Dados deletados", "warning")
+    return redirect(url_for("index"))
+
+if __name__=='__main__':
+    app.secret_key="admin123"
+    app.run(debug=True)
