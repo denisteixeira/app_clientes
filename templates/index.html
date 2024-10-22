@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="row">
+<h3 class='text-center text-muted mb-3'></h3>
+<p class="text-right"><a href="{{url_for('add_client')}}" class="btn btn-success">+Novo Cliente</a></p>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Idade</th>
+        <th scope="col">Cidade</th>
+        <th scope="col">CPF</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for row in datas %}
+      <tr>
+        <td>{{loop.index}}</td>
+        <td>{{row.NOME}}</td>
+        <td>{{row.EMAIL}}</td>
+        <td>{{row.IDADE}}</td>
+        <td>{{row.CIDADE}}</td>
+        <td>{{row.CPF}}</td>
+        <td><a href="{{url_for('edit_client',id=row.ID)}}" class="btn btn-primary">Editar</a></td>
+        <td><a href="{{url_for('delete_user',id=row.ID)}}" class="btn btn-danger" onclick="return confirm ('Tem certeza que deseja apagar?')">Deletar</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

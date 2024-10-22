@@ -14,33 +14,33 @@ def index ():
     data=cur.fetchall()
     return render_template("index.html", datas=data)
 
-@app.route("/add_user", methods=["POST", "GET"])
+@app.route("/add_client", methods=["POST", "GET"])
 def add_user():
     if request.method=="POST":
-        username=request.form["username"]
+        nome=request.form["nome"]
         email=request.form["email"]
-        password=request.form["password"]
-        create_time=request.form["create_time"]
+        idade=request.form["idade"]
+        cidade=request.form["cidade"]
         cpf=request.form["cpf"]
         con=sql.connect("db_users")
         cur=con.cursor()
-        cur.execute("insert into clientes(USERNAME, EMAIL, PASSWORD, CREATE_TIME, CPF) values (?,?,?,?,?,?)", (username, email, password, create_time, cpf))
+        cur.execute("insert into clientes(NOME, EMAIL, IDADE, CIDADE, CPF) values (?,?,?,?,?,?)", (nome, email, idade, cidade, cpf))
         con.commit()
         flash("Dados cadastrados", "success")
         return redirect (url_for("index"))
     return render_template("add_user.html")
 
-@app.route("/.edit_user/<string:id>", methods=["POST", "GET"])
+@app.route("/.edit_client/<string:id>", methods=["POST", "GET"])
 def edit_user(id):
     if request.method=="POST":
-        username=request.form["username"]
+        nome=request.form["nome"]
         email=request.form["email"]
-        password=request.form["password"]
-        create_time=request.form["create_time"]
+        idade=request.form["idade"]
+        cidade=request.form["cidade"]
         cpf=request.form["cpf"]
         con=sql.connect("db_users")
         cur=con.cursor()
-        cur.execute("update clients set USERNAME=?, EMAIL=?, PASSWORD=?, CREATE_TIME=?, CPF=? where ID=?", (username, email, password, create_time, cpf,id))
+        cur.execute("update clients set NOME=?, EMAIL=?, IDADE=?, CIDADE=?, CPF=? where ID=?", (nome, email, idade, ccidade, cpf,id))
         con.commit()
         flash("Dados atualizados", "success")
         return redirect(url_for("index"))
@@ -51,7 +51,7 @@ def edit_user(id):
     data=cur.fetchone()
     return render_template("edit_user.html", datas=data)
 
-@app.route("/delete_user/<string:id>", methods=["GET"])
+@app.route("/delete_client/<string:id>", methods=["GET"])
 def delete_user(id):
     con=sql.connect("db_users")
     cur=con.cursor()
