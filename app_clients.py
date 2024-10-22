@@ -31,7 +31,7 @@ def add_user():
     return render_template("add_user.html")
 
 @app.route("/.edit_user/<string:id>", methods=["POST", "GET"])
-def edit_user(id)
+def edit_user(id):
     if request.method=="POST":
         username=request.form["username"]
         email=request.form["email"]
