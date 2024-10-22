@@ -2,12 +2,13 @@ import mysql.connector
 from mysql.connector import Error
 
 def connect_to_db():
+    connection = None  # Initialize connection variable
     try:
         # Establish the connection
         connection = mysql.connector.connect(
             host='172.18.1.13',       # Change if the database is hosted elsewhere
             user='app01',   # Your MySQL username
-            password='Sucesso_2025', # Your MySQL password
+            password='Sucesso@2025', # Your MySQL password
             database='db_users'     # The name of your database
         )
 
@@ -28,7 +29,7 @@ def connect_to_db():
         print(f"Error while connecting to MySQL: {e}")
     
     finally:
-        if connection.is_connected():
+        if connection and connection.is_connected():  # Check if connection was established
             cursor.close()
             connection.close()
             print("MySQL connection is closed")
