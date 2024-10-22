@@ -5,7 +5,7 @@ def connect_to_db():
     try:
         # Establish the connection
         connection = mysql.connector.connect(
-            host='localhost',       # Change if the database is hosted elsewhere
+            host='172.18.1.13',       # Change if the database is hosted elsewhere
             user='app01',   # Your MySQL username
             password='Sucesso_2025', # Your MySQL password
             database='db_users'     # The name of your database
