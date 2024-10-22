@@ -1,11 +1,11 @@
-import mysql.connector
+import mysql.connector as sql
 from mysql.connector import Error
 
 def connect_to_db():
     connection = None  # Initialize connection variable
     try:
         # Establish the connection
-        connection = mysql.connector.connect(
+        connection = sql.connect(
             host='172.18.1.13',       # Change if the database is hosted elsewhere
             user='app01',   # Your MySQL username
             password='Sucesso@2025', # Your MySQL password

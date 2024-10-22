@@ -7,4 +7,5 @@ app=Flask(__name__)
 @app.route("/index")
 
 def index ():
-    con = 
+    con = mysql.connector("db_users")
+    con.row_factory=connector.row
