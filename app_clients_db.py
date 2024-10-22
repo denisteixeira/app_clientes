@@ -1,4 +1,4 @@
-import mysql.connector as sql
+import mysql.connector
 from mysql.connector import Error
 
 def connect_to_db():
