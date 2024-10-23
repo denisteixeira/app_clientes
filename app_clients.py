@@ -17,6 +17,7 @@ def index ():
         cur=con.cursor()
         cur.execute("SELECT * FROM clientes")
         data=cur.fetchall()
+        print("Fetched data:", data)  # Debugging output
         return render_template("index.html", datas=data)
 
     except Exception as e:
