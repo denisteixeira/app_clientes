@@ -25,14 +25,18 @@ def connect_to_db():
             record = cursor.fetchone()
             print(f"You're connected to the database: {record}")
 
+
+         return connection
+
     except Error as e:
         print(f"Error while connecting to MySQL: {e}")
-    
-    finally:
-        if connection and connection.is_connected():  # Check if connection was established
-            cursor.close()
-            connection.close()
-            print("MySQL connection is closed")
+        
+# remains connected    
+#    finally:
+#        if connection and connection.is_connected():  # Check if connection was established
+#            cursor.close()
+#            connection.close()
+#            print("MySQL connection is closed")
 
 if __name__ == "__main__":
     connect_to_db()
