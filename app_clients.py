@@ -42,7 +42,7 @@ def add_user():
        
         try:
             cur=con.cursor()
-            cur.execute("INSERT INTO clientes (NOME, EMAIL, IDADE, CIDADE, CPF) values (%s, %s, %s, %s, %s)", (nome, email, idade, cidade, cpf))
+            cur.execute("INSERT INTO clientes (NOME, EMAIL, IDADE, CIDADE, CPF) VALUES (%s, %s, %s, %s, %s)", (nome, email, idade, cidade, cpf))
             con.commit()
             flash("Dados cadastrados", "success")
             return redirect (url_for("index"))
@@ -69,7 +69,7 @@ def edit_user(id):
 
         try:
             cur=con.cursor()
-            cur.execute("UPDATE clientes SET NOME=%s, EMAIL=%s, IDADE=%s, CIDADE=%s, CPF=%s WHERE ID=%s", (nome, email, idade, cidade, cpf,id))
+            cur.execute("UPDATE clientes SET NOME=%s, EMAIL=%s, IDADE=%s, CIDADE=%s, CPF=%s WHERE ID=%s", (nome, email, idade, cidade, cpf, id))
             con.commit()
             flash("Dados atualizados", "success")
             return redirect(url_for("index"))
