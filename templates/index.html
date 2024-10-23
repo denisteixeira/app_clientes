@@ -22,7 +22,7 @@
         <td>{{row.IDADE}}</td>
         <td>{{row.CIDADE}}</td>
         <td>{{row.CPF}}</td>
-        <td><a href="{{url_for('edit_client',id=row.ID)}}" class="btn btn-primary">Editar</a></td>
+        <td><a href="{{url_for('edit_user',id=row.ID)}}" class="btn btn-primary">Editar</a></td>
         <td><a href="{{url_for('delete_user',id=row.ID)}}" class="btn btn-danger" onclick="return confirm ('Tem certeza que deseja apagar?')">Deletar</a></td>
       </tr>
       {% endfor %}
