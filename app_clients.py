@@ -36,7 +36,7 @@ def add_user():
     if request.method=="POST":
         nome=request.form["nome"]
         email=request.form["email"]
-        idade=request.form.get["idade"]
+        idade=request.form.get("idade")
         cidade=request.form["cidade"]
         cpf=request.form["cpf"]
        
