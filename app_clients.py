@@ -82,10 +82,10 @@ def edit_user(id):
 
     try:
         if con:
-            cur=con.cursor()
+            cur=con.cursor(dictionary=True)
             cur.execute("SELECT * FROM clientes WHERE ID =%s", (id,))
             data=cur.fetchone()
-            print(data)
+            print("Fetched data for editing:", data)
             return render_template("edit_user.html", datas=data)
     except Exception as e:
         return f"An error occurred: {e}"
