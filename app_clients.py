@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import mysql.connector as sql
+from app_clients_db import connect_to_db # to import connection function from app_clients_db.py
 
 app=Flask(__name__)
 
@@ -7,8 +8,8 @@ app=Flask(__name__)
 @app.route("/index")
 
 def index ():
-    con = sql.connect("db_users")
-    con.row_factory=sql.Row
+    con = connect_to_db()
+#    con.row_factory=sql.Row
     cur=con.cursor()
     cur.execute("Select * from clientes")
     data=cur.fetchall()
