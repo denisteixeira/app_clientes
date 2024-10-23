@@ -85,6 +85,7 @@ def edit_user(id):
             cur=con.cursor()
             cur.execute("SELECT * FROM clientes WHERE ID =%s", (id,))
             data=cur.fetchone()
+            print(data)
             return render_template("edit_user.html", datas=data)
     except Exception as e:
         return f"An error occurred: {e}"
