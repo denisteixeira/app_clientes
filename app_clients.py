@@ -91,7 +91,7 @@ def edit_user(id):
         if con.is_connected():
             con.close()
 
-@app.route("/delete_client/<string:id>", methods=["GET"])
+@app.route("/delete_user/<string:id>", methods=["GET"])
 def delete_user(id):
     con=connect_to_db() # make new connection
     if con is None:
