@@ -27,7 +27,7 @@ def index ():
 
 
 
-@app.route("/add_client", methods=["POST", "GET"])
+@app.route("/add_user", methods=["POST", "GET"])
 def add_user():
     con=connect_to_db() # make new connection
     if con is None:
