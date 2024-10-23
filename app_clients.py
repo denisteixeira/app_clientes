@@ -63,7 +63,7 @@ def edit_user(id):
     if request.method=="POST":
         nome=request.form["nome"]
         email=request.form["email"]
-        idade=request.form["idade"]
+        idade=request.form.get("idade")
         cidade=request.form["cidade"]
         cpf=request.form["cpf"]
 
