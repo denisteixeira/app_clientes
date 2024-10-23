@@ -7,7 +7,7 @@ def connect_to_db():
     try:
         # Establish the connection
         connection = sql.connect(
-            host='172.18.1.13',         # Change if the database is hosted elsewhere
+            host='127.0.0.1',         # Change if the database is hosted elsewhere
             user='app01',               # Your MySQL username
             password='Sucesso@2025',    # Your MySQL password
             database='db_users'         # The name of your database
@@ -31,12 +31,6 @@ def connect_to_db():
     except Error as e:
         print(f"Error while connecting to MySQL: {e}")
         return None
-
-    finally:
-        if cursor:
-            cursor.close()
-        if connection and connection.is_connected():
-            connection.close()
 
 if __name__ == "__main__":
     connect_to_db()
