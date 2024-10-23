@@ -104,7 +104,7 @@ def delete_user(id):
         flash("Dados deletados", "warning")
         return redirect(url_for("index"))
     except Exception as e:
-        return f"An error occurred: {e}"^
+        return f"An error occurred: {e}"
     finally:
         if con.is_connected():
             con.close()
