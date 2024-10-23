@@ -69,7 +69,7 @@ def edit_user(id):
 
         try:
             cur=con.cursor()
-            cur.execute("UPDATE clientes SET NOME=%s, EMAIL=%s, IDADE=%s, CIDADE=%s, CPF=%s where ID=%s", (nome, email, idade, cidade, cpf,id))
+            cur.execute("UPDATE clientes SET NOME=%s, EMAIL=%s, IDADE=%s, CIDADE=%s, CPF=%s WHERE ID=%s", (nome, email, idade, cidade, cpf,id))
             con.commit()
             flash("Dados atualizados", "success")
             return redirect(url_for("index"))
