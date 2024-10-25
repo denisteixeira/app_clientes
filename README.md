@@ -4,7 +4,7 @@ Este projeto é destinado ao gerenciamento de informações de clientes. Ele inc
 ### Estrutura do Projeto
 - app_clients.py: Script principal que lida com as operações de clientes.
 - app_clients_db.py: Contém os detalhes da conexão MySQL e funções de banco de dados.
-t- emplates/: Pasta que contém os templates HTML para a interface web.
+- emplates/: Pasta que contém os templates HTML para a interface web.
 
 ### Requisitos
 - Python 3.x
