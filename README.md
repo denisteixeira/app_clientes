@@ -20,7 +20,8 @@ CREATE TABLE clientes (
     IDADE VARCHAR(255),
     CIDADE VARCHAR(255),
     CPF VARCHAR(255)
-);```
+);
+```
 
 
 ### Configuração
