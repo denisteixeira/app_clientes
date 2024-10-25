@@ -11,7 +11,9 @@ t- emplates/: Pasta que contém os templates HTML para a interface web.
 - MySQL (Versão: 8.0.39)
 - *Opicional: Testado em Ubuntu 24.04 LTS usando virtual environment (Link para ajudar na configuração:https://hostman.com/tutorials/how-to-install-python-and-pip-on-ubuntu-24-04/)
 - *Opicional o uso de MySQL Workbench para gerir o banco. Caso use, execute esse comando para criação da tabela clientes e todos os campos necessários:
-```USE db_users;
+
+```
+USE db_users;
 
 CREATE TABLE clientes ( 
     ID INT AUTO_INCREMENT PRIMARY KEY,
