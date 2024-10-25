@@ -1,9 +1,23 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
+from flask_httpauth import HTTPBasicAuth
+from werkzeug.security import generate_password_hash, check_password_hash
 import mysql.connector as sql
 from app_clients_db import connect_to_db # to import connection function from app_clients_db.py
 
 app=Flask(__name__)
 app.secret_key="admin123"
+auth = HTTPBasicAuth()
+
+# Login setup
+users = {"admin": generate_password_hash("admin102030")}
+
+
+@auth.verify_password
+def verify_password(username, password):
+    if username in users and check_password_hash(users.get(username), password):
+        return username
+    
+@auth.login_required    
 
 @app.route("/")
 @app.route("/index")
