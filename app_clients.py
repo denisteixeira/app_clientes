@@ -17,10 +17,9 @@ def verify_password(username, password):
     if username in users and check_password_hash(users.get(username), password):
         return username
     
-@auth.login_required    
-
 @app.route("/")
 @app.route("/index")
+@auth.login_required
 
 def index ():
     con = connect_to_db() # make new connection
