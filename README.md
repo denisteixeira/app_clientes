@@ -32,4 +32,5 @@ CREATE TABLE clientes (
 - Configure a conexão MySQL no arquivo app_clients_db.py.
 
 ### Uso
-- Execute o arquivo app_clients.py para iniciar a aplicação.
+- Inicie seu environment (source nomequalquer/bin/activate)
+- Execute o arquivo app_clients.py para iniciar a aplicação.(python app_clients.py)
