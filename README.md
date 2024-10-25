@@ -37,5 +37,6 @@ CREATE TABLE clientes (
 ![image](https://github.com/user-attachments/assets/a70ea59e-811f-4e06-8934-76448f3e3176)
   
 - Execute o arquivo app_clients.py para iniciar a aplicação digite "python app_clients.py", exemplo:
+
 ![image](https://github.com/user-attachments/assets/b63832a7-f9fa-46ff-939b-f977ba399af5)
 
